@@ -1,0 +1,55 @@
+@use 'src/styles/colors' as c;
+
+@import 'src/styles/commonStyles';
+
+:local {
+  .date {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    height: 100px;
+
+    & .divider {
+      height: 100%;
+      width: 1px;
+      background-color: #e8e8e8;
+    }
+
+    & .dateAndTime {
+      @include flexCenter;
+
+      flex-direction: column;
+      justify-content: space-around;
+      height: 100%;
+
+      & .time {
+        display: flex;
+        color: c.$complement-dark-one;
+        align-items: flex-end;
+
+        & p:first-child {
+          margin-right: 5px;
+          font-size: 32px;
+          line-height: 0.85;
+        }
+      }
+
+      & .dateTop {
+        @include flexCenter;
+
+        justify-content: flex-start;
+
+        & img {
+          height: 16px;
+          width: 16px;
+        }
+
+        & p {
+          margin-left: 7px;
+          font-size: 16px;
+          color: c.$primary-neutral;
+        }
+      }
+    }
+  }
+}

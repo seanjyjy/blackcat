@@ -1,0 +1,24 @@
+@use 'src/styles/colors' as c;
+
+@import 'src/styles/commonStyles';
+
+:local {
+  .name,
+  .location {
+    font-size: 14px;
+    color: c.$primary-neutral;
+  }
+
+  .name {
+    margin-top: 5px;
+    font-weight: 600;
+  }
+
+  .map {
+    margin-top: 10px;
+    height: 94px;
+    width: 98%;
+    border-radius: 8px;
+    transform: translateX(1%);
+  }
+}

@@ -1,0 +1,48 @@
+@use 'src/styles/colors' as c;
+
+@import 'src/styles/commonStyles';
+
+:local {
+  .avatarContainer {
+    margin-top: 10px;
+    padding: 10px;
+    border-top: 1px solid #e8e8e8;
+    border-bottom: 1px solid #e8e8e8;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    & .avatarRow {
+      display: flex;
+      align-items: flex-start;
+
+      & .avatars {
+        margin-left: 10px;
+
+        @include flexCenter;
+
+        flex-wrap: wrap;
+
+        & .avatar,
+        & .expandMore {
+          width: 26px;
+          height: 26px;
+          border-radius: 50%;
+          overflow: hidden;
+          margin-right: 10px;
+          margin-bottom: 5px;
+        }
+
+        & .expandMore {
+          cursor: pointer;
+          border: 1px solid #ac8ec9;
+          padding: 7px 5px 5px 5px;
+        }
+
+        & .flipped {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+}

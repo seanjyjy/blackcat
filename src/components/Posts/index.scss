@@ -1,0 +1,28 @@
+@use 'src/styles/colors' as c;
+
+@import 'src/styles/commonStyles';
+
+:local {
+  .home {
+    display: flex;
+  }
+
+  .emptySearchResult {
+    @include flexCenterCenter;
+
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+
+    & > img {
+      width: 60px;
+      height: 60px;
+      transform: translateY(-20px);
+    }
+
+    & > p {
+      font-size: 14px;
+      color: c.$text-light;
+    }
+  }
+}

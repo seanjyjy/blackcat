@@ -1,0 +1,134 @@
+@use 'src/styles/colors' as c;
+
+@import 'src/styles/commonStyles';
+
+:local {
+  input:focus {
+    outline: none;
+  }
+
+  .input::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: c.$placeholder-text;
+  }
+
+  .input:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: c.$placeholder-text;
+  }
+
+  .input::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: c.$placeholder-text;
+    opacity: 1; /* Firefox */
+  }
+
+  .loginBackground {
+    background:
+      linear-gradient(
+        rgba(133, 96, 169, 0.7),
+        rgba(133, 96, 169, 0.7)
+      ),
+      url('../../images/street-dance.jpeg');
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    padding-top: 90px;
+  }
+
+  .container {
+    height: 100%;
+    width: 100%;
+
+    @include flexCenterSpace;
+
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .title {
+    font-size: clamp(16px, 2.5vw, 24px);
+    font-weight: 600;
+    color: c.$complement;
+  }
+
+  .appName {
+    font-size: clamp(24px, 3vw, 32px);
+    font-weight: bold;
+    color: c.$complement;
+    margin: 20 0 50 0;
+  }
+
+  .logo {
+    height: clamp(74px, 10vw, 114px);
+    width: clamp(74px, 10vw, 114px);
+    border-radius: 50%;
+    border: 1px solid c.$complement;
+    padding: 10px;
+  }
+
+  .signInButton {
+    width: 100%;
+    height: 64px;
+    background-color: c.$complement;
+    color: c.$primary-dark;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+  }
+
+  .inputsContainer {
+    display: grid;
+    place-items: center;
+  }
+
+  .inputContainer {
+    @include flexCenter;
+
+    height: 40px;
+    width: 240px;
+    margin: 7px 0;
+    border-radius: 20px;
+    border: 1px solid c.$primary-light;
+    padding: 0 10px;
+
+    & > img {
+      width: 17px;
+      height: 17px;
+      filter:
+        invert(88%) sepia(11%) saturate(1516%) hue-rotate(203deg)
+        brightness(96%) contrast(86%);
+      margin-right: 5px;
+    }
+
+    & .input {
+      width: 100%;
+      background-color: transparent;
+      border: none;
+      color: c.$primary-dark;
+      font-size: 16px;
+      font-weight: 400;
+    }
+  }
+
+  .inputContainer:focus-within {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .noAccountMessage {
+    font-size: 14px;
+    color: c.$primary-light;
+
+    & .signUpButton {
+      color: c.$complement;
+    }
+  }
+
+  .errorMessage {
+    font-size: 12px;
+    color: #f03;
+  }
+}

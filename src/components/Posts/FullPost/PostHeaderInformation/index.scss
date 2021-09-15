@@ -1,0 +1,53 @@
+@use 'src/styles/colors' as c;
+
+@import 'src/styles/commonStyles';
+
+:local {
+  .container {
+    padding: 15 15 0;
+  }
+
+  .channelName {
+    color: c.$primary;
+    font-size: 12px;
+    border-radius: 10px;
+    border: 1px solid c.$primary-light;
+    padding: 1 5px;
+    width: fit-content;
+  }
+
+  .title {
+    font-size: 20px;
+    color: c.$primary-dark;
+    font-weight: 600;
+    margin: 10 0;
+  }
+
+  .profile {
+    display: flex;
+
+    & img {
+      height: 36px;
+      width: 36px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 10px;
+    }
+
+    & .profileInformation {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      & p {
+        font-size: 14px;
+        color: c.$primary-neutral;
+      }
+
+      & span {
+        font-size: 12px;
+        color: c.$text-light;
+      }
+    }
+  }
+}

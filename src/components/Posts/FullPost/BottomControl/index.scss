@@ -1,0 +1,120 @@
+@use 'src/styles/colors' as c;
+
+@import 'src/styles/commonStyles';
+
+@mixin bottomStyling {
+  @include flexCenter;
+
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+}
+
+:local {
+  .bottomControl {
+    @include bottomStyling;
+
+    .likeAndComment {
+      @include flexCenter;
+
+      width: 100%;
+      background-color: c.$primary;
+      height: 56px;
+
+      .commentLikeButton {
+        height: 100%;
+        width: 100%;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+
+        & img {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+
+    .joinButton {
+      @include flexCenterCenter;
+
+      background-color: c.$complement;
+      height: 56px;
+      width: 100%;
+      border: none;
+      cursor: pointer;
+
+      & img {
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
+      }
+
+      & p {
+        font-size: 14px;
+        color: c.$complement-dark-two;
+      }
+    }
+  }
+
+  .chat {
+    @include bottomStyling;
+
+    .message {
+      @include flexCenter;
+
+      height: 56px;
+      width: 100%;
+      background-color: c.$primary;
+
+      & img {
+        width: 20px;
+        height: 20px;
+        margin: 0 10px;
+        cursor: pointer;
+      }
+
+      & .chatInput {
+        width: 100%;
+        margin-right: 20px;
+        height: 32px;
+        border-radius: 20px;
+        border: none;
+        padding: 0 20px;
+        font-size: 14px;
+        color: c.$primary-dark;
+      }
+
+      & .chatInput::placeholder {
+        /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: c.$primary-light;
+        opacity: 1; /* Firefox */
+      }
+
+      & .chatInput:-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        color: c.$primary-light;
+      }
+
+      & .chatInput::-ms-input-placeholder {
+        /* Microsoft Edge */
+        color: c.$primary-neutral;
+      }
+    }
+
+    .send {
+      @include flexCenterCenter;
+
+      height: 56px;
+      width: 64px;
+      background-color: c.$complement;
+      border: none;
+      cursor: pointer;
+
+      & img {
+        width: 28px;
+        height: 28px;
+      }
+    }
+  }
+}

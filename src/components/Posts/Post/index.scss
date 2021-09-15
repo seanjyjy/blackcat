@@ -1,0 +1,109 @@
+@use 'src/styles/colors' as c;
+
+@import 'src/styles/commonStyles';
+
+:local {
+  .descriptionContainer {
+    margin-top: 10px;
+
+    & .dataDescription {
+      width: 100%;
+      color: c.$primary-neutral;
+      font-size: 14px;
+    }
+
+    & .controls {
+      @include flexCenter;
+
+      margin-top: 10px;
+    }
+  }
+
+  .post {
+    margin-top: 10px;
+    padding: 0 15px;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .post:not(:last-of-type)::after {
+    content: '';
+    height: 2px;
+    width: 95%;
+    transform: translateX(2.5%);
+    background-color: #e8e8e8;
+    display: block;
+    margin: 15 0 10 0;
+  }
+
+  .post:last-of-type {
+    margin-bottom: 20px;
+  }
+
+  .header {
+    @include flexCenterSpace;
+
+    height: 30px;
+
+    & .profile {
+      @include flexCenter;
+
+      & > img {
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+      }
+    }
+
+    & .userName {
+      font-size: 12px;
+      color: c.$primary-neutral;
+      font-weight: 600;
+      margin-left: 10px;
+    }
+
+    .channelName {
+      color: c.$primary;
+      font-size: 12px;
+      border-radius: 10px;
+      border: 1px solid c.$primary-light;
+      padding: 1 5px;
+      width: fit-content;
+    }
+  }
+
+  .titleContainer {
+    display: flex;
+    justify-content: space-between;
+
+    & .titleInformation {
+      height: 100%;
+
+      & > p {
+        font-size: 18px;
+        font-weight: 600px;
+        color: c.$primary-dark;
+      }
+
+      & .date {
+        @include flexCenter;
+
+        color: c.$primary;
+        font-size: 12px;
+        margin-top: 10px;
+
+        & > img {
+          width: 14px;
+          height: 14px;
+          margin-right: 3px;
+        }
+      }
+    }
+
+    & .titleImage {
+      margin-left: 10px;
+      width: 64px;
+      height: 64px;
+    }
+  }
+}

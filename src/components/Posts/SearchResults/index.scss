@@ -1,0 +1,43 @@
+@use 'src/styles/colors' as c;
+
+@import 'src/styles/commonStyles';
+
+:local {
+  .searchResult {
+    width: 100%;
+    padding: 0 25px;
+    position: sticky;
+    top: 40;
+    z-index: 20;
+    background-color: c.$background;
+
+    .searchResultHeader {
+      @include flexCenterSpace;
+
+      padding: 10 0;
+
+      & > p {
+        font-size: 16px;
+        font-weight: 600;
+        color: c.$primary;
+      }
+
+      & button {
+        cursor: pointer;
+        font-size: 10px;
+        font-weight: 600;
+        color: c.$primary-neutral;
+        background-color: c.$complement;
+        border: none;
+        padding: 7px 15px;
+        border-radius: 12px;
+      }
+    }
+
+    .searchResultText {
+      padding-bottom: 10px;
+      font-size: 12px;
+      color: c.$primary-neutral;
+    }
+  }
+}

@@ -1,0 +1,62 @@
+@use 'src/styles/colors' as c;
+
+@import 'src/styles/commonStyles';
+
+:local {
+  .comments {
+    padding: 0 13px;
+
+    .comment {
+      display: flex;
+      margin: 15px 0;
+
+      .imgContainer {
+        margin-right: 10px;
+
+        & > img {
+          height: 32px;
+          width: 32px;
+          border-radius: 50%;
+        }
+      }
+
+      .textContainer {
+        width: 100%;
+
+        .text {
+          font-size: 14px;
+          color: c.$primary-neutral;
+        }
+
+        .header {
+          @include flexCenterSpace;
+
+          width: 100%;
+          margin-bottom: 5px;
+
+          & .nameDateTime {
+            display: flex;
+            align-items: flex-end;
+
+            & .name {
+              font-size: 12px;
+              color: c.$primary;
+              margin-right: 5px;
+            }
+
+            & .dateAndTime {
+              font-size: 10px;
+              color: c.$text-light;
+            }
+          }
+
+          & img {
+            height: 16px;
+            width: 16px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

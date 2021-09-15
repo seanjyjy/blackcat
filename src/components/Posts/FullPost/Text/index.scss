@@ -1,0 +1,50 @@
+@use 'src/styles/colors' as c;
+
+@import 'src/styles/commonStyles';
+
+:local {
+  .textContainer {
+    padding: 10 13px;
+    position: relative;
+    margin-bottom: 10px;
+
+    & .text {
+      font-size: 14px;
+      height: fit-content;
+    }
+
+    & .textGrey {
+      color: c.$primary-neutral;
+    }
+
+    & .fadedGrey {
+      background-color: c.$primary-neutral;
+      background-image:
+        linear-gradient(
+          c.$primary-neutral,
+          rgba(250, 249, 252, 0),
+          c.$background
+        );
+      background-size: 100%;
+      background-repeat: repeat;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -moz-background-clip: text;
+      -moz-text-fill-color: transparent;
+    }
+
+    & button {
+      position: absolute;
+      right: 13px;
+      bottom: -15px;
+      border-radius: 12px;
+      background-color: c.$complement;
+      color: c.$primary-neutral;
+      font-size: 10px;
+      font-weight: 600;
+      border: none;
+      padding: 6px 16px;
+      cursor: pointer;
+    }
+  }
+}

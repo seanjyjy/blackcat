@@ -1,0 +1,27 @@
+@use 'src/styles/colors' as c;
+
+@import 'src/styles/commonStyles';
+
+:local {
+  .container {
+    padding: 5 13px;
+  }
+
+  .header {
+    @include flexCenter;
+
+    & > div {
+      border-radius: 2px;
+      height: 18px;
+      width: 4px;
+      background-color: c.$primary;
+      margin-right: 5px;
+    }
+
+    & > p {
+      font-size: 16px;
+      font-weight: 600;
+      color: c.$primary;
+    }
+  }
+}

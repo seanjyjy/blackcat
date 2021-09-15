@@ -1,0 +1,51 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:react/recommended",
+    "prettier"
+  ],
+  "env": {
+    "browser": true,
+    "amd": true,
+    "node": true
+  },
+  "settings": {
+    "react": {
+      "createClass": "createReactClass",
+      "pragma": "React",
+      "fragment": "Fragment",
+      "version": "detect",
+      "flowVersion": "0.53"
+    },
+    "propWrapperFunctions": [
+      "forbidExtraProps",
+      { "property": "freeze", "object": "Object" },
+      { "property": "myFavoriteWrapper" },
+      { "property": "forbidExtraProps", "exact": true }
+    ],
+    "componentWrapperFunctions": [
+      "observer",
+      { "property": "styled" },
+      { "property": "observer", "object": "Mobx" },
+      { "property": "observer", "object": "<pragma>" }
+    ],
+    "formComponents": [
+      "CustomForm",
+      { "name": "Form", "formAttribute": "endpoint" }
+    ],
+    "linkComponents": ["Hyperlink", { "name": "Link", "linkAttribute": "to" }]
+  },
+  "rules": {
+    // disable the rule for all files
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-explicit-any": ["off"],
+    "@typescript-eslint/no-non-null-assertion": ["off"],
+    "@typescript-eslint/no-non-null-asserted-optional-chain": ["off"],
+    "@typescript-eslint/no-var-requires": 0
+  }
+}

@@ -1,0 +1,171 @@
+@use 'src/styles/colors' as c;
+
+@import 'src/styles/commonStyles';
+
+@mixin roundedButton($margin) {
+  padding: 3 7px;
+  margin: $margin;
+  cursor: pointer;
+  border-radius: 12px;
+  position: relative;
+}
+
+:local {
+  .search {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    min-width: 77vw;
+    background-color: c.$primary-dark;
+
+    & .optionsContainer {
+      @include flexCenter;
+
+      flex-direction: column;
+
+      & .optionContainer {
+        margin-top: 15px;
+        display: grid;
+        place-items: center;
+
+        & > p {
+          margin-bottom: 10px;
+          font-size: 12px;
+          font-weight: 600;
+          color: c.$placeholder-text;
+        }
+
+        & > p::after {
+          content: '';
+          width: 100%;
+          height: 2px;
+          background-color: c.$primary;
+          display: block;
+        }
+      }
+
+      & .date,
+      & .channel {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 7px;
+      }
+
+      & .date {
+        & .unselectedD,
+        & .selectedD {
+          font-size: 14px;
+          font-weight: 600;
+          border: 1px solid transparent;
+        }
+
+        & .unselectedD {
+          @include roundedButton(5px);
+
+          color: #fff;
+        }
+
+        & .selectedD,
+        & .selectedDLater {
+          font-size: 14px;
+
+          @include roundedButton(5px);
+
+          color: c.$primary-dark;
+          background-color: c.$complement-light;
+        }
+
+        & .selectedDLater::after {
+          content: '';
+          position: absolute;
+          height: 15px;
+          width: 15px;
+          background-color: white;
+          bottom: -23px;
+          left: 21px;
+          transform: rotate(45deg);
+        }
+      }
+
+      & .channel .unselectedC {
+        @include roundedButton(6 8px);
+
+        font-size: 12px;
+        color: #fff;
+        border: 1px solid #fff;
+      }
+
+      & .channel .selectedC {
+        @include roundedButton(6 8px);
+
+        font-size: 12px;
+        border: 1px solid transparent;
+        color: c.$primary-dark;
+        background-color: c.$complement-light;
+      }
+    }
+
+    & .searchButton {
+      @include flexCenterCenter;
+
+      flex-direction: column;
+      height: 64px;
+      border: none;
+      font-size: 16px;
+      color: c.$search-text;
+      font-weight: 600;
+      cursor: pointer;
+
+      & .buttonText {
+        @include flexCenter;
+      }
+
+      & img {
+        height: 16px;
+        width: 16px;
+        margin-right: 5px;
+      }
+
+      & .searchText {
+        font-size: 10px;
+        color: c.$primary;
+      }
+    }
+
+    & .laterOptions {
+      background-color: white;
+      width: calc(100% - 34px);
+      height: 40px;
+      display: flex;
+      align-items: center;
+      transform: translateY(6px);
+      z-index: 10; // important to keep popper infront
+      justify-content: space-around;
+
+      & > img {
+        height: 12px;
+        width: 12px;
+        margin: 0 10px;
+      }
+
+      & .dateSpacing {
+        min-width: 8px;
+        min-height: 1.5px;
+        background-color: rgba(0, 0, 0, 0.09);
+      }
+
+      & .datepicker {
+        border: none;
+        font-size: 14px;
+        color: c.$primary;
+        cursor: pointer;
+        width: 100%;
+      }
+
+      & .datepicker::selection {
+        background: c.$complement-light;
+      }
+    }
+  }
+}

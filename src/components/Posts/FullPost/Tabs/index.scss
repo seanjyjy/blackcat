@@ -1,0 +1,59 @@
+@use 'src/styles/colors' as c;
+
+@import 'src/styles/commonStyles';
+
+@mixin tabBar {
+  content: '';
+  display: block;
+  height: 90%;
+  width: 1px;
+  background-color: #e8e8e8;
+  position: absolute;
+}
+
+:local {
+  .tabContainer {
+    display: flex;
+    justify-content: space-around;
+    padding: 15 10px;
+    border-top: 1px solid #e8e8e8;
+    border-bottom: 1px solid #e8e8e8;
+    margin-top: 15px;
+    position: sticky;
+    min-height: 50px;
+    max-height: 50px;
+    top: 40;
+    z-index: 10;
+    background-color: white;
+
+    .tab {
+      display: flex;
+      align-items: center;
+      position: relative;
+      cursor: pointer;
+
+      & img {
+        height: 17px;
+        width: 17px;
+        margin-right: 5px;
+      }
+
+      & p {
+        font-size: 12px;
+        font-weight: 600;
+      }
+    }
+
+    .tab:nth-child(2)::before {
+      @include tabBar;
+
+      left: -25%;
+    }
+
+    .tab:nth-child(2)::after {
+      @include tabBar;
+
+      right: -25%;
+    }
+  }
+}
